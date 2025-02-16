@@ -35,4 +35,18 @@ function swipperAnimation(){
         spaceBetween: 30,
       });
 };
+
 swipperAnimation();
+
+
+var lder = document.querySelector(".loader");
+setTimeout(function () {
+    lder.style.top = "-100%";
+}, 3500)
+ 
+
+var pB = document.querySelector(".nav-btn p");
+var fulls = document.querySelector("#full-scr");
+pB.addEventListener("click", function(){
+    fulls.style.top =  0
+})

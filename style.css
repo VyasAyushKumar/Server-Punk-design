@@ -17,11 +17,61 @@ html, body{
     width: 100%;
     background-color: white;
 }
+.loader{
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    position: fixed;
+    z-index: 999;
+    transition: all ease 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0%;
+}
+.loader h1{
+    color: transparent;
+    display: block;
+    font-size: 8vw;
+    background: linear-gradient(to right, orange, orangered);
+    -webkit-background-clip: text;
+    position: absolute;
+    opacity: 0;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-name: load;
+    animation-timing-function: linear;
+}
+.loader h1:nth-child(2){
+    
+    animation-delay: 2s;
+ 
+}
+.loader h1:nth-child(3){
+    
+    animation-delay: 3s;
+ 
+}
+@keyframes load {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
 .main{
     /* background-color: #000; */
     position: relative;
     z-index: 10;
 }
+
 .page1{
     min-height: 100vh;
     width: 100%;
@@ -35,6 +85,16 @@ nav{
         display: flex;
         align-items: center;
         justify-content: space-between;
+}
+ 
+nav .nav-btn p{
+    border: 1px solid grey;
+    border-radius: 50px;
+    padding: 5px;
+    font-size: 3vw;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: none;
 }
 .nav-part-2{
     display: flex;
@@ -512,7 +572,7 @@ nav{
 }
  
 #end-hero{
-    height: 300px;
+    height: 290px;
     width: 800px;
     background-color: #FE320A;
     position: absolute;
@@ -529,7 +589,7 @@ nav{
     animation-direction: alternate;
 }
 #end-two{
-    height: 350px;
+    height: 250px;
     width: 860px;
     background-color: #FE320A;
     position: absolute;
@@ -585,11 +645,11 @@ nav{
 {
     .page1{
         min-height: 100vh;
-        width: 100vw;
+        width: 100%;
         background-color: #EFEAE3;
         position: relative;
-        padding: 6vw 8vw;
-        overflow-y: hidden;
+        padding: 8vw 5vw;
+        overflow: hidden;
         
     }
     nav{
@@ -599,7 +659,24 @@ nav{
             align-items: center;
             justify-content: space-between;
             overflow-y: hidden;
+             /* background-color: orange; */
+             padding: 0px;
+             margin-bottom: 36vw;
       
+    }
+    nav img{
+        height: 40px;
+    }
+    nav .nav-btn p{
+        border: 1px solid grey;
+        border-radius: 50px;
+        padding: 10px 25px;
+        font-size: 3.5vw;
+        font-weight: 500;
+        letter-spacing: 1px;
+        display: block;
+        cursor: pointer;
+
     }
     .nav-part-2{
         display: flex;
@@ -625,6 +702,9 @@ nav{
     }
     .nav-btn span{
         display: none;
+    }
+    #full-scr{
+
     }
      
     .nav-part-2 button{
@@ -662,40 +742,51 @@ nav{
     }
     
     .center {
-        height: 65vh;
+        height: 42vh;
         width: 100%;
         /* background-color: orange; */
         display: flex;
-        align-items: flex-end;
+        align-items: start;
+        margin-top: 7vw;
         justify-content: space-between;
         border-bottom: 1px solid #0000003c;
+
         padding-bottom: 2.5vw;
     }
     
+    .center h1 {
+        font-size: 17vw;
+        text-align: right;  
+        margin-left: -25vw;
+        line-height: 13.6vw;
+        font-weight: 900;
+        /* background-color: red; */
+    }
     .center-left h3 {
-        width: 25vw;
-        font-size: 1.8vw;
-        line-height: 2vw;
+        width: 70vw;
+        position: absolute;
+        font-size: 5vw;
+        line-height: 4.7vw;
+        margin-top: 60vw;
+ 
     }
     
-    .center h1 {
-        font-size: 10vw;
-        text-align: right;
-        line-height: 8vw;
-    }
     .page1 video{
-        height: 100%;
+         
+        height: 70vh;
+        object-fit: cover;
+        object-position: center;
         width: 100%;
         border-radius: 30px;
-        margin-top: 4vw;
+        margin-top: 10vw;
         position: relative;
     
     }
     #hero-shape {
         position: absolute;
-        width: 46vw;
-        height: 36vw;
-        right: 0;
+        width: 82vw;
+        height: 66vw;
+        right: -4vw;
         top: 65vh;
     }
     
@@ -716,7 +807,7 @@ nav{
         border-radius: 50%;
         position: absolute;
         animation-name: anime2;
-        animation-duration: 2.5s;
+        animation-duration: 2s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
         animation-direction: alternate;
@@ -731,7 +822,7 @@ nav{
         border-radius: 50%;
         filter: blur(30px);
         animation-name: anime1;
-        animation-duration: 2s;
+        animation-duration: 1s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
         animation-direction: alternate;
@@ -760,11 +851,13 @@ nav{
      /* page 2 starts from here */
     
      #page2 {
-        min-height: 100vh;
+        min-height: 70vh;
         width: 100%;
         background-color: #EFEAE3;
-        padding: 8vw 0;
+        /* background-color: red; */
+        padding: 8vw 0vw 0vw 0vw;
         position: relative;
+        overflow: hidden;
     }
     
     #moving-text {
@@ -775,25 +868,25 @@ nav{
     #moving-text::-webkit-scrollbar {
         display: none;
     }
-    
+
     .con {
         white-space: nowrap;
         display: inline-block;
         animation-name: move;
-        animation-duration: 10s;
+        animation-duration: 8s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
     }
     
     #moving-text h1 {
-        font-size: 9vw;
+        font-size: 12vw;
         /* background-color: lightblue; */
         display: inline-block;
     }
     
     #gola {
-        height: 70px;
-        width: 70px;
+        height: 25px;
+        width: 25px;
         border-radius: 50%;
         display: inline-block;
         background-color: #FE320A;
@@ -811,50 +904,61 @@ nav{
     }
     
     #page2-bottom {
-        height: 80vh;
+        height: 60vh;
         width: 100%;
-        /* background-color: aliceblue; */
+        /* background-color: orange; */
         padding: 4.5vw;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         position: relative;
+        flex-direction: column;
         z-index: 9;
+    
     }
     
     #page2-bottom h1 {
-        font-size: 4vw;
-        width: 60%;
-        line-height: 4vw;
+        font-size: 7vw;
+        width: 100%;
+        line-height: 8vw;
+        margin-top: 0vw;
+        /* background-color: red; */
     }
     
     #bottom-part2 {
-        width: 20%;
-        /* background-color: aqua; */
+        width: 72%;
+        /* background-color: red; */
+        /* padding-bottom: 25vw; */
+        margin-bottom: 40vw;
+        padding: 20px 0px 0 0px;
+     
+ 
     }
     
     #bottom-part2 img {
-        width: 100%;
+        width: 65vw;
+        height: auto;
         border-radius: 15px;
+      
     }
     
     #bottom-part2 p {
         font-weight: 200;
-        margin-top: 2vw;
-        font-size: 1vw;
+        margin-top: 0vw;
+        font-size: 3vw;
     }
     
     #page2 #gooey {
-        height: 32vw;
-        width: 32vw;
+        height: 72vw;
+        width: 72vw;
         position: absolute;
         border-radius: 50%;
         background: linear-gradient(to top right, #ff2d03, #ff5c0b);
-        top: 50%;
-        left: 25%;
+        top: 24%;
+        left: 28%;
         filter: blur(20px);
         animation-name: gooey;
-        animation-duration: 6s;
+        animation-duration: 3s;
         animation-iteration-count: infinite;
         animation-direction: alternate;
         animation-timing-function: ease-in-out;
@@ -873,23 +977,24 @@ nav{
         }
     }
     #page3{
-        min-height: 100vh;
+        min-height: 70vh;
         width: 100%;
         background-color: #EFEAE3;
+        /* background-color: orange; */
     }
     .elem{
-        height: 130px;
+        height: 80px;
         width: 100%;
         border-bottom: 0.5px solid rgba(177, 177, 177, 0.384);
         position: relative;
         display: flex;
         align-items: center;
-        padding: 0 2vw;
+        padding: 0 4vw;
         background-color: transparent;
         overflow: hidden;
     }
     .elem h2{
-        font-size: 2.5vw;
+        font-size: 7vw;
         position: relative;
         z-index: 9;
     }
@@ -903,49 +1008,56 @@ nav{
         transition: all ease 0.2s;
     }
     .elem:hover .overlay{
-        top: 0;
+        top: 0%;
     }
     #fixed-image{
-        height: 31vw;
-        width: 25vw;
+        height: 44vw;
+        width: 30vw;
         /* background-color: seagreen; */
         border-radius: 10px;
         position: fixed;
         z-index: 99;
-        left: 50%;
-        top: 20%;
+        left: 65%;
+        top: 40%;
         display: none;
         background-size: contain;
         background-position: center7
     }
     #page4{
-        height: 130vh;
+        height: 40vh;
         width: 100%;
         background-color: #EFEAE3;
-        padding: 6vw 2vw 1vw 2vw;
+        position: relative;
+        padding: 6vw 4vw 1vw 4vw;
         /* padding-bottom: 1vw; */
     }
     #page4-container{
         height: 80%;
         width: 100%;
         background-color: #0B0500;
-        border-radius: 20px;
+        border-radius: 10px;
         display: flex;
+        position: relative;
     }
     #page4-left{
         height: 100%;
-        width: 45%;
+        width: 50%;
         background-color: transparent;
-        padding: 9vw 10vw;
+        padding: 9vw 3vw;
         color: rgba(255, 255, 255, 0.89);
     }
     #page4-left h3{
         border-left: 2px solid wheat;
-        font-size: 4vw;
+        font-size: 6vw;
         padding: 0px;
         padding-left: 10px;
         transition: all ease-in-out 0.3s;
         cursor: pointer;
+    }
+    #page4-left p{
+        font-size: 2.5vw;
+        margin-top: 0.5vw;
+        line-height: 3vw;
     }
     #page4-left h3:nth-child(1):hover{
         border-left: 2px solid orangered;
@@ -968,14 +1080,14 @@ nav{
         height: 100%;
         width: 55%;
         background-color: rgb(0, 17, 255);
-        border-radius: 20px;
+        border-radius: 10px;
         background: url(./Assets/ending-page-img.webp);
         background-size: cover;
         background-position: center;
     }
     /* swipprer */
     #page5{
-        height: 60vh;
+        height: 30vh;
         width: 100%;
         background-color: #EFEAE3;
         /* background-color: orange; */
@@ -984,37 +1096,38 @@ nav{
     }
     
     .swiper {
-        width: 100%;
-        height: 100%;
+        width:120vw;
+        height: 80%;   
         position: relative;
         /* background-color: orange; */
+        
       }
     
       .swiper-slide {
         /* text-align: center; */
-        font-size: 18px;
-        padding: 3vw 2vw;
+        font-size: 15px;
+        padding: 2vw 2vw;
         background: #EFEAE3;
         border-left: 1px solid rgba(0, 0, 0, 0.466);
     
       }
       .swiper-slide:nth-child(1){
         /* background-color: red; */
-        margin-left: -67vw;
+        margin-left: -50vw;
       }
     
       .swiper-slide img {
         display: block;
         background-size: cover;
         /* width: 200px; */
-        height: 70px;
+        height: 40px;
         /* object-fit: cover; */
         margin-bottom: 2.7vw;
       }
     
     
       .swiper-slide {
-        width: 30%;
+        width: 50%;
         /* background-color: red; */
         
         
@@ -1022,7 +1135,7 @@ nav{
     
     /* swipper */
     #page6{
-        height: 120vh;
+        height: 70vh;
         width: 100%;
     }
     #footer{
@@ -1048,7 +1161,6 @@ nav{
     #footer-div{
         height: 20vh;
         width: 100%;
-     
         display: flex;
         justify-content: space-between;
         padding: 2vw 1vw;
@@ -1056,9 +1168,8 @@ nav{
     }
     .footer-right{
         height: 100%;
-        width: 50%;
-     
-        padding: 0vw 4vw 0vw 17vw
+        width: 80%;
+        padding: 0vw 10vw 0vw 17vw
     }
     .footer-right p{
         line-height:18px;
@@ -1068,11 +1179,13 @@ nav{
         border: none;
         outline: none;
         height: 35px;
-        width:290px;
-        font-size: 1.4vw;
+        width:150px;
+        font-size: 4vw;
         padding-left: 4px;
         background: transparent;
         border-bottom: 1px solid rgba(255, 255, 255, 0.644);
+        cursor: pointer;
+        user-select: text;
          
     }
     #footer-left h2{
@@ -1088,9 +1201,9 @@ nav{
      
         border-bottom-right-radius: 90%;
         filter: blur(30px);
-        top: -3vw;
+        top: 50vw;
         /* border-radius: 50%; */
-        left: -1vw;
+        left: -7vw;
         animation-name: anime10;
         animation-duration: 2s;
         animation-timing-function: linear;
@@ -1105,7 +1218,7 @@ nav{
      
         border-bottom-left-radius: 70%;
         filter: blur(30px);
-        top: -1vw;
+        top: 20vw;
         /* border-radius: 50%; */
         right: -1vw;
         animation-name: animeEND2;
